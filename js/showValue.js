@@ -10,7 +10,7 @@ showValue.prototype.app = function(value1, showIndex) {
   var myHr = document.createElement('hr');
   var myP = document.createElement('p');
 
-  if(showTndex)
+  if(showTndex == true)
     myP.innerHTML = ++this.total;
   myP.innerHTML = myP.innerHTML + '&#9' + value1;
   this.myBody.appendChild(myHr);
