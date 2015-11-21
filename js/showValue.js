@@ -4,15 +4,15 @@ function showValue() {
   this.total = 0;
 }
 
-// 类方法，功能为－追加变量致 Body 标签当中
+// 类方法，功能是将参数 value1 值显示在页面.
 showValue.prototype.app = function(value1, showIndex) {
   this.myBody = document.getElementsByTagName('body')[0];
   var myHr = document.createElement('hr');
   var myP = document.createElement('p');
 
-  if(showTndex == true)
-    myP.innerHTML = ++this.total;
-  myP.innerHTML = myP.innerHTML + '&#9' + value1;
+  // if(showTndex == true)
+  //   myP.innerHTML = ++this.total;
+  myP.innerHTML = ++this.total + '&#9' + value1;
   this.myBody.appendChild(myHr);
   this.myBody.appendChild(myP);
   if (this.total % 2 == 1) {
