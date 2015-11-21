@@ -5,7 +5,7 @@ function showValue() {
 }
 
 // 类方法，功能是将参数 value1 值显示在页面.
-showValue.prototype.app = function(value1, showIndex) {
+showValue.prototype.app = function(value1) {
   this.myBody = document.getElementsByTagName('body')[0];
   var myHr = document.createElement('hr');
   var myP = document.createElement('p');
