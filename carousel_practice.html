@@ -6,29 +6,32 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style type="text/css">
-  	.box {margin:0 auto; padding:0; width: 50%; position: relative; }
-  	.box:hover {box-shadow: 0 0 2em gray;}
-  	.box .object {position: relative;}
-  	.object img {width: 100%;}
-  	.object p { width: inherit; height: 1em; display: block; margin:-2em auto 0 ; text-align: center; color: white;}
+  	.box {margin:2em auto; padding:0; width: 50%; height: 600px; position: relative; /*overflow: hidden;*/  transition: box-shadow 0.4s;}
+  	.box:hover {box-shadow: 0 0 1em gray; -moz-box-shadow: 0 0 1em gray;}
+  	.object { font-size: 0; position: absolute; left: 0; top: 0; width: 100%; height: 100%;float: left; }
+  	.object img {width: 100%; }
   	.box .left {position: absolute; left: 0;}
-  	.box .carousel-control {position: absolute; top: 49%; display: inline-block;height: inherit; font-size: 12em; }
-  	.carousel-control:hover {background-color:gray; }
+    .box .right {position:absolute; right: 0;}
+  	.carousel-control {/*position: absolute; top: 0%;*/ height: 100%; display: block; font-size: 12em;}
+  	.carousel-control:hover {background-color:gray; opacity: 0.75;}
   </style>
+  <script type="text/javascript" src="https://raw.githubusercontent.com/zhi4hua/exercise_book/master/js/showValue.js"></script>
+  <script type="text/javascript" src="js/carousel_practice.js" charset="utf-8"></script>
 </head>
 <body>
-<div class="box">
+<div id="box" class="box">
 	<div class="object">
 		<img src="http://image.nationalgeographic.com.cn/2015/1109/20151109052323642.jpg">
-		<p>眼对眼</p>
-		<p>摄影：Chris Schmid</p>
+		<!-- <p>眼对眼</p>
+		<p>摄影：Chris Schmid</p> -->
 	</div>
 	<div class="object">
 		<img src="http://image.nationalgeographic.com.cn/2015/1112/20151112041759649.jpg">
-		<p>眼对眼</p>
-		<p>摄影：Chris Schmid</p>
+		<!-- <p>眼对眼</p>
+		<p>摄影：Chris Schmid</p> -->
 	</div>
-	<a href="#" class="left carousel-control">&lt;</a>
+	<a href="#" class="left carousel-control" alt="Slide to the left" title="test1">&#60;</a>
+  <a href="#" class="right carousel-control" alt="Slide to the right" title="test">&gt;</a>
 </div>
 </body>
 </html>
