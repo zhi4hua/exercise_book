@@ -17,3 +17,15 @@ showValue.prototype.app = function(value1) {
     myP.style='background:gray';
   }
 }
+
+// 添加 "标签" 方法
+// 将标签 femaleTag 添加到 标签 subTag
+showValue.prototype.appendTag(femaleTag, subTag) {
+  femaleTag.appendChild(subTag);
+}
+
+// 添加 "文字" 方法
+// 将字段 text 变量,添加到标签 femaleTag 当中
+showValue.prototype.appendText(femaleTag, text) {
+  femaleTag.innerHTML += text.toString();
+}
