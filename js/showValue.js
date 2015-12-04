@@ -36,5 +36,6 @@ showValue.prototype.appendTag(femaleTag, subTag) {
 // 添加 "文字" 方法
 // 将字段 text 变量,添加到标签 femaleTag 当中
 showValue.prototype.appendText(femaleTag, text) {
+  alert('已经运行到这');
   femaleTag.innerHTML += text.toString();
 }
