@@ -5,16 +5,25 @@ function showValue() {
 }
 
 // 类方法，功能为－追加变量致 Body 标签当中
-showValue.prototype.app = function(value1) {
+showValue.prototype.app = function(value1, color, index) {
   this.myBody = document.getElementsByTagName('body')[0];
   var myHr = document.createElement('hr');
   var myP = document.createElement('p');
 
-  myP.innerHTML = ++this.total + '&#9' + value1;
+  if (typeof(index) == "number")
+    this.total = index;
+  if (index == undefined)
+    myP.innerHTML = ++this.total + '&#9' + value1;
+  else if (index == false)
+    myP.innerHTML = value1;
+
   this.myBody.appendChild(myHr);
   this.myBody.appendChild(myP);
   if (this.total % 2 == 1) {
-    myP.style='background:gray';
+    if (color == undefined)
+      myP.style='background:gray';
+    else
+      myP.style='background-color:' + color.toLowerCase();
   }
 }
 

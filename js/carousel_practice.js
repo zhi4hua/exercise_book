@@ -34,7 +34,7 @@
       myBox.onmouseover = function() {
         stopCarousel(Timer);
         for(var i = 0; i != directionsButtonsTmp.length; ++i)
-          directionsButtonsTmp[i].onclick = function() {console.app('已经单击')};
+          directionsButtonsTmp[i].onclick = click(myImgDivs, !(i % 2) ? "左" : "right");
       }
       myBox.onmouseout = function() {
         Timer = startCarousel();
@@ -84,4 +84,32 @@
     function position(obj1, x, y) {
       obj1.style.left = x + 'px';
       console.app('第 ' + x + ' 个div的左边距为: ' + obj1.style.left);
+    }
+
+    // 移动 DIV 函数
+    // 将参数 divName 的属性 disp.left 增加参数 distance (distance > 0 向右移动)
+    function moveDiv(divName, distance) {
+      var divLeft = divName.style.left;
+      divName.style.left = parseInt(divLeft) + distance + 'px';
+    }
+
+    // 单击事件
+    // 单击 "左" 向左滑动, 反之向右滑动.
+    // 特殊情况, 如果元素处在该方向的顶点时, 还向要求向空白滑动, 则到另一方向的顶点
+    function click(myImgDivs, direction){
+      return function() {
+        switch(direction) {
+          case "左": ;
+          case "left": ;
+          case "-1": direction = -1;
+            break;
+          case "右": ;
+          case "right": ;
+          case "1": direction = 1;
+            break;
+        }
+        var distance = parseInt(myImgDivs[0].clientWidth) * direction;
+        for (var i = 0; i < myImgDivs.length; ++i)
+          moveDiv(myImgDivs[i], distance);
+      }
     }
