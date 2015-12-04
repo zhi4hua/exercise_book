@@ -10,6 +10,7 @@ showValue.prototype.app = function(value1, color, index) {
   var myHr = document.createElement('hr');
   var myP = document.createElement('p');
 
+aler('已经运行到这');
   if (typeof(index) == "number")
     this.total = index;
   if (index == undefined)
@@ -36,6 +37,10 @@ showValue.prototype.appendTag(femaleTag, subTag) {
 // 添加 "文字" 方法
 // 将字段 text 变量,添加到标签 femaleTag 当中
 showValue.prototype.appendText(femaleTag, text) {
-  alert('已经运行到这');
   femaleTag.innerHTML += text.toString();
+}
+
+// 设置"母"标签
+showValue.prototype.setParentTag(tagName) {
+  this.myBody = tagName;
 }
