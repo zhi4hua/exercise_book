@@ -10,7 +10,6 @@ showValue.prototype.app = function(value1, color, index) {
   var myHr = document.createElement('hr');
   var myP = document.createElement('p');
 
-aler('已经运行到这');
   if (typeof(index) == "number")
     this.total = index;
   if (index == undefined)
