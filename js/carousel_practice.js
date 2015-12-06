@@ -5,11 +5,13 @@
       // 设置轮播间隔时间
       var intervalTime = 8.2;
       // 每次轮播时长
-      var carouselTime = 5.8;
+      var carouselTime = 0.6;
       // 当前显示图片 Div 的编号
       var showDivId = 0;
+      // 帧数
+      var framesPerSecond = 100;
       // 测试代码,可随时删除
-      var console = new showValue();
+      // var console = new showValue();
 
     function init() {
       var Timer = startCarousel();
@@ -33,8 +35,9 @@
       }
       myBox.onmouseover = function() {
         stopCarousel(Timer);
-        for(var i = 0; i != directionsButtonsTmp.length; ++i)
+        for(var i = 0; i != directionsButtonsTmp.length; ++i) {
           directionsButtonsTmp[i].onclick = click(myImgDivs, !(i % 2) ? "左" : "right");
+        }
       }
       myBox.onmouseout = function() {
         Timer = startCarousel();
@@ -89,8 +92,21 @@
     // 移动 DIV 函数
     // 将参数 divName 的属性 disp.left 增加参数 distance (distance > 0 向右移动)
     function moveDiv(divName, distance) {
-      var divLeft = divName.style.left;
-      divName.style.left = parseInt(divLeft) + distance + 'px';
+      var divLeft = parseInt(divName.style.left);
+      var averagerDistance = distance / (framesPerSecond * 1.0);
+      var averagerTime = carouselTime / (framesPerSecond * 1.0);
+      var i = 0;
+
+      function move() { 
+        divName.style.left = parseInt(divName.style.left) + averagerDistance + 'px'; 
+        ++i; 
+        if (i >= framesPerSecond - 2) {
+          stopCarousel(key); 
+          var text = '已经执行了, 第' + i + '次';
+          alert(text);
+        }
+      }
+      var key = setInterval(move, 1000 * averagerTime);
     }
 
     // 单击事件
@@ -108,7 +124,13 @@
           case "1": direction = 1;
             break;
         }
-        var distance = parseInt(myImgDivs[0].clientWidth) * direction;
+        var left = parseInt(myImgDivs[0].style.left);
+        var distance, total = 0; 
+        var width = parseInt(myImgDivs[0].clientWidth)
+
+        if (left == -1 * width && direction == -1 || left == 0 && direction == 1)
+          direction = (-1) * direction * (myImgDivs.length - 1);
+        distance = width * direction;
         for (var i = 0; i < myImgDivs.length; ++i)
           moveDiv(myImgDivs[i], distance);
       }

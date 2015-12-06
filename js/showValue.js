@@ -37,4 +37,13 @@ showValue.prototype.appendTag(femaleTag, subTag) {
 // 将字段 text 变量,添加到标签 femaleTag 当中
 showValue.prototype.appendText(femaleTag, text) {
   femaleTag.innerHTML += text.toString();
+<<<<<<< HEAD
 }
+=======
+}
+
+// 设置"母"标签
+showValue.prototype.setParentTag(tagName) {
+  this.myBody = tagName;
+}
+>>>>>>> 0837676a2c16a20a78d5ef2f4582a7f6d6ee91a4
