@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans">
 <head>
-	<title>轮播练习</title>
+  <title>轮播练习</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style type="text/css">
-  	.box {margin:2em auto; padding:0; width: 50%; height: 600px; position: relative; overflow: hidden;  transition: box-shadow 0.4s;}
-  	.box:hover {box-shadow: 0 0 1em gray; -moz-box-shadow: 0 0 1em gray;}
-  	.object { font-size: 0; position: absolute; left: 0; top: 0; width: 100%; height: 100%;float: left; }
-  	.object img {width: 100%; }
-  	.box .left {position: absolute; left: 0;}
+    .box {margin:2em auto; padding:0; width: 50%; height: 600px; position: relative; /*overflow: hidden; */ transition: box-shadow 0.4s;}
+    .box:hover {box-shadow: 0 0 1em gray; -moz-box-shadow: 0 0 1em gray;}
+    .object { font-size: 0; position: absolute; left: 0; top: 0; width: 100%; height: 100%;float: left; }
+    .object img {width: 100%; }
+    .box .left {position: absolute; left: 0;}
     .box .right {position:absolute; right: 0;}
-  	.carousel-control {/*position: absolute; top: 0%;*/ height: 100%; display: block; font-size: 12em;}
-  	.carousel-control:hover {background-color:gray; opacity: 0.75;}
+    .carousel-control {/*position: absolute; top: 0%;*/ height: 100%; display: block; font-size: 12em;}
+    .carousel-control:hover {background-color:gray; opacity: 0.75;}
   </style>
   <script type="text/javascript" src="https://raw.githubusercontent.com/zhi4hua/exercise_book/master/js/showValue.js"></script>
   <script type="text/javascript" src="js/carousel_practice.js" ></script>
 </head>
 <body>
 <div id="box" class="box">
-	<div class="object">
-		<img src="http://image.nationalgeographic.com.cn/2015/1109/20151109052323642.jpg">
-		<!-- <p>眼对眼</p>
-		<p>摄影：Chris Schmid</p> -->
-	</div>
-	<div class="object">
-		<img src="http://image.nationalgeographic.com.cn/2015/1112/20151112041759649.jpg">
-		<!-- <p>眼对眼</p>
-		<p>摄影：Chris Schmid</p> -->
-	</div>
-	<a href="#" class="left carousel-control" alt="Slide to the left" title="test1">&#60;</a>
+  <div class="object">
+    <img src="http://image.nationalgeographic.com.cn/2015/1109/20151109052323642.jpg">
+    <!-- <p>眼对眼</p>
+    <p>摄影：Chris Schmid</p> -->
+  </div>
+  <div class="object">
+    <img src="http://image.nationalgeographic.com.cn/2015/1112/20151112041759649.jpg">
+    <!-- <p>眼对眼</p>
+    <p>摄影：Chris Schmid</p> -->
+  </div>
+  <a href="#" class="left carousel-control" alt="Slide to the left" title="test1">&#60;</a>
   <a href="#" class="right carousel-control" alt="Slide to the right" title="test">&gt;</a>
 </div>
 </body>
