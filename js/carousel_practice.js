@@ -102,8 +102,8 @@
         ++i; 
         if (i >= framesPerSecond - 2) {
           stopCarousel(key); 
-          var text = '已经执行了, 第' + i + '次';
-          alert(text);
+        //   var text = '已经执行了, 第' + i + '次';
+        //   alert(text);
         }
       }
       var key = setInterval(move, 1000 * averagerTime);
