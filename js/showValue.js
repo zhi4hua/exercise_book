@@ -32,12 +32,24 @@ showValue.prototype.app = function(value1, color, index1) {
 
 // 添加 "标签" 方法
 // 将标签 femaleTag 添加到 标签 subTag
-showValue.prototype.appendTag = function(femaleTag, subTag) {
-  femaleTag.appendChild(subTag);
-}
+showValue.prototype.appendTag = function ( subTag, femaleTag) {
+			if (arguments.length == 2)
+		  		femaleTag.appendChild(subTag);
+		  	else if (arguments.length == 1)
+		  		document.getElementsByTagName('body')[0].appendChild(subTag);
+		  	else 
+		  		throw "array length error";
+		}
 
 // 添加 "文字" 方法
 // 将字段 text 变量,添加到标签 femaleTag 当中
-showValue.prototype.appendText = function(femaleTag, text) {
-  femaleTag.innerHTML += text.toString();
-}
+showValue.prototype.appendText = function (text, femaleTag) {
+		 	if (arguments.length == 2) {
+		  		femaleTag.innerHTML += text.toString();
+		 	}
+		  	else if(arguments.length == 1)
+		  		document.getElementsByTagName('body')[0].innerHTML += text.toString();
+		  	else {
+		  		throw "error";
+		  	}
+		}
