@@ -18,8 +18,8 @@ showValue.prototype.app = function(value1, color, index1) {
   else if (index1 == false)
   	text = '';
   if (this.total % 2 != 0)
-  	this.appendTag(this.myBody, myHr);
-  this.appendTag(this.myBody, myP);
+  	this.appendTag(myHr, this.myBody);
+  this.appendTag(myP, this.myBody);
   if (this.index % 2 == 1) {
     if (color != undefined)
     	this.bgColor = color;
