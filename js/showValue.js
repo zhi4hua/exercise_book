@@ -58,7 +58,7 @@ showValue.prototype.appendText = function (text, femaleTag) {
 // 按参数 Tag 指定的类型生成标签
 showValue.prototype.createTag = function (Type) {
 	var len = arguments.length;
-	// var result = "";
+	alert("To this");
 	
 	if (len >= 0 && len <= 1) {
 		if len == 0
