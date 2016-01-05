@@ -60,7 +60,7 @@ showValue.prototype.createTag = function (Type) {
 	var len = arguments.length;
 	
 	if (len >= 0 && len <= 1) {
-		if len == 0 {
+		if (len == 0) {
 			Type = 'h2';
 		}
 		return document.createElement(Type);
