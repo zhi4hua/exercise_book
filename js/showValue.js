@@ -56,16 +56,17 @@ showValue.prototype.appendText = function (text, femaleTag) {
 
 // 生成标签
 // 按参数 Tag 指定的类型生成标签
-// showValue.prototype.createTag = function (Type) {
-// 	var len = arguments.length;
-// 	// var result = "";
+showValue.prototype.createTag = function (Type) {
+	var len = arguments.length;
+	// var result = "";
 	
-// 	if (len >= 0 && len <= 1)
-// 		if len == 0
-// 			Type = 'h2';
-// 		return document.createElement(Type);
-// 	else
-// 		// throw Error("Wrong number of parameters");
-// 		throw "Wrong number of parameters";
+	if (len >= 0 && len <= 1) {
+		if len == 0
+			Type = 'h2';
+		return document.createElement(Type);
+	}
+	else
+		// throw Error("Wrong number of parameters");
+		throw "Wrong number of parameters";
 			
-// }
+}
