@@ -66,7 +66,6 @@ showValue.prototype.createTag = function (Type) {
 		return document.createElement(Type);
 	}
 	else
-		// throw Error("Wrong number of parameters");
-		throw "Wrong number of parameters";
+		throw Error("Wrong number of parameters");
 			
 }
