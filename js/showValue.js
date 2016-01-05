@@ -65,6 +65,7 @@ showValue.prototype.createTag = function (Type) {
 			Type = 'h2';
 		return document.createElement(Type);
 	else
-		throw Error("Wrong number of parameters");
+		// throw Error("Wrong number of parameters");
+		throw "Wrong number of parameters";
 			
 }
